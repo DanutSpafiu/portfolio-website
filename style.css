@@ -350,9 +350,65 @@ body {
   transition: var(--transition);
 }
 
+/* React - Cyan */
+.skill-card[data-skill="react"] i,
+.skill-card[data-skill="react-native"] i {
+  color: #61DAFB;
+}
+
+/* Node.js - Green */
+.skill-card[data-skill="nodejs"] i {
+  color: #339933;
+}
+
+/* JavaScript - Yellow */
+.skill-card[data-skill="javascript"] i {
+  color: #F7DF1E;
+}
+
+/* HTML - Orange-Red */
+.skill-card[data-skill="html"] i {
+  color: #E34F26;
+}
+
+/* CSS - Blue */
+.skill-card[data-skill="css"] i {
+  color: #1572B6;
+}
+
+/* C/C++ - Blue */
+.skill-card[data-skill="cpp"] i {
+  color: #00599C;
+}
+
+/* Git - Orange-Red */
+.skill-card[data-skill="git"] i {
+  color: #F05032;
+}
+
+/* Python - Blue */
+.skill-card[data-skill="python"] i {
+  color: #3776AB;
+}
+
+/* C# - Green */
+.skill-card[data-skill="csharp"] i {
+  color: #239120;
+}
+
+/* Angular - Red */
+.skill-card[data-skill="angular"] i {
+  color: #DD0031;
+}
+
+/* Docker - Blue */
+.skill-card[data-skill="docker"] i {
+  color: #2496ED;
+}
+
 .skill-card:hover i {
   transform: scale(1.2) rotate(5deg);
-  filter: drop-shadow(0 0 10px var(--color-blue-glow));
+  filter: drop-shadow(0 0 10px currentColor);
 }
 
 .skill-card h3 {
