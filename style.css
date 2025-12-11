@@ -662,6 +662,66 @@ body {
   font-size: 0.9rem;
 }
 
+/* Resume Download Section (Global) */
+.resume-download-section {
+  padding: 60px 20px;
+  background-color: var(--color-gray-light);
+}
+
+.resume-download-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resume-download-card {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: var(--transition);
+}
+
+.resume-download-card:hover {
+  border-color: var(--color-baby-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 119, 190, 0.3);
+}
+
+.resume-download-card i {
+  font-size: 2.5rem;
+  color: var(--color-baby-blue);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.resume-download-card:hover i {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px var(--color-blue-glow));
+}
+
+.resume-download-text {
+  flex: 1;
+}
+
+.resume-download-text h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.resume-download-text p {
+  color: var(--color-text-light);
+  font-size: 1rem;
+}
+
+.resume-download-card .btn {
+  flex-shrink: 0;
+}
+
 /* ============================================
    CONTACT PAGE
    ============================================ */
@@ -1155,6 +1215,20 @@ body {
 
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .milestones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-download-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .resume-download-text {
+    text-align: center;
   }
 
   .interests-grid {
