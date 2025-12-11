@@ -67,7 +67,7 @@ const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach(card => {
   card.addEventListener('mouseenter', function() {
     this.style.transform = 'translateY(-10px)';
-    this.style.boxShadow = '0 15px 40px rgba(255, 46, 46, 0.4)';
+    this.style.boxShadow = '0 15px 40px rgba(0, 119, 190, 0.5)';
   });
   
   card.addEventListener('mouseleave', function() {
@@ -84,7 +84,7 @@ const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
   button.addEventListener('mouseenter', function() {
     this.style.transform = 'translateY(-2px)';
-    this.style.boxShadow = '0 0 20px rgba(255, 46, 46, 0.5)';
+    this.style.boxShadow = '0 0 20px rgba(0, 119, 190, 0.6)';
   });
   
   button.addEventListener('mouseleave', function() {
@@ -104,11 +104,11 @@ window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
   
   if (currentScroll > 100) {
-    navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
-    navbar.style.borderBottomColor = 'rgba(255, 46, 46, 0.3)';
+    navbar.style.backgroundColor = 'rgba(245, 245, 240, 0.98)';
+    navbar.style.borderBottomColor = 'rgba(0, 119, 190, 0.5)';
   } else {
-    navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
-    navbar.style.borderBottomColor = 'rgba(255, 46, 46, 0.2)';
+    navbar.style.backgroundColor = 'rgba(245, 245, 240, 0.95)';
+    navbar.style.borderBottomColor = 'rgba(0, 119, 190, 0.4)';
   }
   
   lastScroll = currentScroll;
