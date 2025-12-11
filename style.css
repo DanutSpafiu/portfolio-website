@@ -721,6 +721,102 @@ body {
 .contact-link:hover {
   color: var(--color-baby-blue);
   transform: translateX(5px);
+  text-decoration: underline;
+}
+
+/* CV Download Section */
+.cv-section {
+  padding: 60px 20px;
+  background-color: transparent;
+}
+
+.cv-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cv-card {
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray);
+  border-radius: 12px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: var(--transition);
+}
+
+.cv-card:hover {
+  border-color: var(--color-baby-blue);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 119, 190, 0.3);
+}
+
+.cv-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gray-light);
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.cv-card:hover .cv-icon {
+  background-color: var(--color-baby-blue);
+  transform: scale(1.1);
+}
+
+.cv-icon i {
+  font-size: 2.5rem;
+  color: var(--color-baby-blue);
+  transition: var(--transition);
+}
+
+.cv-card:hover .cv-icon i {
+  color: var(--color-white);
+}
+
+.cv-details {
+  flex: 1;
+}
+
+.cv-details h2 {
+  font-size: 1.8rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.cv-details p {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.cv-details .btn {
+  margin-top: 0;
+}
+
+/* ============================================
+   RESUME PAGE
+   ============================================ */
+
+.resume-hero {
+  padding: 120px 20px 60px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-off-white) 0%, var(--color-gray-light) 100%);
+}
+
+.resume-section {
+  padding: 60px 20px 0;
+}
+
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* ============================================
@@ -814,7 +910,7 @@ body {
 
 .project-content h3 {
   font-size: 1.5rem;
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: 1rem;
 }
 
@@ -1040,6 +1136,26 @@ body {
 
   .contact-link:hover {
     transform: none;
+    text-decoration: underline;
+  }
+
+  .cv-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .cv-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .cv-icon i {
+    font-size: 2rem;
+  }
+
+  .cv-details h2 {
+    font-size: 1.5rem;
   }
 }
 
