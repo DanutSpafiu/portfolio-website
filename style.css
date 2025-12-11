@@ -53,6 +53,8 @@ body {
   padding: 1rem 0;
   border-bottom: 1px solid rgba(0, 119, 190, 0.3);
   transition: var(--transition);
+  will-change: background-color, border-color;
+  transform: translateZ(0);
 }
 
 .navbar:hover {
@@ -150,6 +152,7 @@ body {
   text-align: center;
   z-index: 2;
   animation: fadeInUp 1s ease-out;
+  will-change: transform, opacity;
 }
 
 .hero-name {
@@ -193,6 +196,8 @@ body {
     linear-gradient(90deg, rgba(0, 119, 190, 0.2) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: gridMove 20s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 @keyframes gridMove {
@@ -311,6 +316,8 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .skill-card::before {
@@ -601,12 +608,14 @@ body {
 }
 
 .project-card {
-  background-color: var(--color-gray);
-  border: 2px solid var(--color-gray-light);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-gray);
   border-radius: 12px;
   overflow: hidden;
   transition: var(--transition);
   cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .project-card:hover {
@@ -751,13 +760,14 @@ body {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translate3d(0, 30px, 0);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
 }
 
 .fade-in.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* ============================================

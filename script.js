@@ -94,13 +94,13 @@ buttons.forEach(button => {
 });
 
 // ============================================
-// NAVBAR SCROLL EFFECT
+// NAVBAR SCROLL EFFECT (OPTIMIZED)
 // ============================================
 
-let lastScroll = 0;
+let ticking = false;
 const navbar = document.querySelector('.navbar');
 
-window.addEventListener('scroll', () => {
+function updateNavbar() {
   const currentScroll = window.pageYOffset;
   
   if (currentScroll > 100) {
@@ -111,8 +111,15 @@ window.addEventListener('scroll', () => {
     navbar.style.borderBottomColor = 'rgba(0, 119, 190, 0.4)';
   }
   
-  lastScroll = currentScroll;
-});
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateNavbar);
+    ticking = true;
+  }
+}, { passive: true });
 
 // ============================================
 // ACTIVE NAV LINK HIGHLIGHTING
@@ -131,19 +138,33 @@ navLinks.forEach(link => {
 });
 
 // ============================================
-// PARALLAX EFFECT FOR HERO SECTION
+// PARALLAX EFFECT FOR HERO SECTION (OPTIMIZED)
 // ============================================
 
 const hero = document.querySelector('.hero');
+let parallaxTicking = false;
+
+function updateParallax() {
+  if (!hero) return;
+  
+  const scrolled = window.pageYOffset;
+  const heroContent = hero.querySelector('.hero-content');
+  
+  if (heroContent && scrolled < window.innerHeight) {
+    heroContent.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`;
+    heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+  }
+  
+  parallaxTicking = false;
+}
+
 if (hero) {
   window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const heroContent = hero.querySelector('.hero-content');
-    if (heroContent && scrolled < window.innerHeight) {
-      heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-      heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+    if (!parallaxTicking) {
+      window.requestAnimationFrame(updateParallax);
+      parallaxTicking = true;
     }
-  });
+  }, { passive: true });
 }
 
 // ============================================
