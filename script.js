@@ -1,4 +1,60 @@
 // ============================================
+// SMOOTH PAGE TRANSITIONS
+// ============================================
+
+// Add fade-in animation when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.style.opacity = '0';
+  setTimeout(() => {
+    document.body.style.transition = 'opacity 0.4s ease-in';
+    document.body.style.opacity = '1';
+  }, 10);
+});
+
+// Handle smooth transitions for internal links
+function setupPageTransitions() {
+  const internalLinks = document.querySelectorAll('a[href]');
+  
+  internalLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    
+    // Skip external links, mailto, tel, anchors, and download links
+    if (!href || 
+        href.startsWith('http') || 
+        href.startsWith('mailto:') || 
+        href.startsWith('tel:') || 
+        href.startsWith('#') ||
+        link.hasAttribute('download') ||
+        link.getAttribute('target') === '_blank') {
+      return;
+    }
+    
+    // Only handle internal HTML page links
+    if (href.endsWith('.html') || href === 'index.html' || href === '/' || (href.startsWith('./') && href.endsWith('.html'))) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Fade out current page
+        document.body.style.transition = 'opacity 0.3s ease-out';
+        document.body.style.opacity = '0';
+        
+        // Navigate after fade out
+        setTimeout(() => {
+          window.location.href = href;
+        }, 300);
+      });
+    }
+  });
+}
+
+// Setup transitions when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupPageTransitions);
+} else {
+  setupPageTransitions();
+}
+
+// ============================================
 // NAVIGATION TOGGLE (MOBILE)
 // ============================================
 
